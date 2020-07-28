@@ -1,0 +1,49 @@
+Username: Davidsa
+Name: David Shandor   id: 302902705
+
+Program Description:
+This Program is a simulation of Disk Management using Unix-fs system.
+The system works with 3 direct access blocks and 1 single InDirect block that could contain more size_block Indirect blocks
+Each block contain file data. For big file we can extand the size using the single blocks.
+
+Commands number and explaination:
+0 - Delete fsDisk with all the data, and exit the program.
+1 - Print disk contents and files list.
+2 - Format the disk, required block size and number of direct blocks.
+3 - Create new file. Cannot Create file with name that already exist. Also,     Cannot Create file if there is no atleast 1 block to be allocate.
+4 - Open file. Works only if the file has been create before.
+5 - Close file. 
+6 - Write new data to file.
+7 - Read Len chars from file (if len > file size then read all the file only).
+8 - Delete file from disk, include all it data and allocations.
+
+
+Compilation:
+Ctrl+Shift+B -> Build-> Continue without scanning the task output.
+
+Launch the Program: 
+Ctrl+F5     
+
+Attached filed:
+FinalExam.cpp
+DISK_SIM_FILE.txt - Disk Simulator file.
+MakeFile, launch.json, tasks.json, setting.jason - Configuration files.
+Readme
+
+
+How to use the program:
+First, format the disk using the command "2", then choose block size and number of direct blocks.
+Open a new file, by use command "3", and give it a name. 
+Write data into the open file, using command "6" and by FD (the file Descriptor). 
+Close (5), open (4) or delete (8) file by the required command. 
+
+
+
+NOTE:
+The Program work only if disk has been formatted.
+Max Disk Size is 256, and Max blocks on the system is 256/block_size.
+Max file number of block is: direct blocks + block_size (as Single).
+Max file size is : (direct blocks + block_size) * block_size;
+
+Importent! Some commands required FD (Integer) and others required File name (a String).
+Please make sure to provide the appropriate requirement.
